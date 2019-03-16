@@ -14,16 +14,22 @@ const callAPI = async (api) => {
     }
 }
 
-const wiseRon = (data, selektor) => {
+const wiseRon = (data, selektor, broj) => {
     const paraf = document.createElement('h4')
-
-    const misao = data[0]
+    
+    const misao = data[broj]
     paraf.textContent = misao
     selektor.appendChild(paraf)
 }
 
+const ronGif = (data, selektor, broj) => {
+    const image = document.createElement('img')
+    
+    image.src = data.data[broj].images.original.webp
+    selektor.appendChild(image)
+}
 
-
-callAPI(API_GIPHY)
 callAPI(API_URL_SWANSON)
-    .then(data => wiseRon(data, main))
+    .then(data => wiseRon(data, main, 0))
+callAPI(API_GIPHY)
+    .then(data => ronGif(data, main, 3))
