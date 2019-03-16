@@ -8,7 +8,7 @@ routes.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'))
 })
 */
-
+/*
 routes.get('/', async (req, res) => {
     try {
         const response = await fetch(API_URL_SWANSON)
@@ -21,6 +21,7 @@ routes.get('/', async (req, res) => {
     }
     
 })
+*/
 routes.get('/other', (req, res) => {
     res.sendFile(path.join(__dirname, './public/other.html'))
 })
